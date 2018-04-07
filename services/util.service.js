@@ -1,7 +1,7 @@
 require('dotenv').config();
 const bcrypt = require('bcrypt');
 
-const salt = process.env.ROUNDS;
+const salt = Number.parseInt(process.env.ROUNDS, 10);
 
 module.exports = {
   async hashPassword(pwd) {
